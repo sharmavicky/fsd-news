@@ -1,0 +1,28 @@
+<div class="margin-top">
+<h2>Search News Analyst</h2>
+  
+<input type="text" placeholder="Search.."  id="search" [(ngModel)]="email">
+<button type="submit" id="searchButton" (click)="getUser(email)">
+  <i class="fa fa-search"></i>
+</button>
+</div>
+
+<div *ngIf="user" class="margin-top-maxwidth" >
+  <div class="card text-center background1" *ngIf="user.blacklist" >
+    <div class="card-body" (click)="changeStatus(user.email)">
+      <h5 class="card-title">{{user.name}}</h5>
+      <p class="card-text">{{user.email}}</p>
+      <p class="card-text">{{user.language.name}}</p>
+
+    </div>
+  </div>
+
+  <div class="card text-center background" *ngIf="!user.blacklist">
+    <div class="card-body " (click)="changeStatus(user.email)">
+      <h5 class="card-title">{{user.name}}</h5>
+      <p class="card-text">{{user.email}}</p>
+      <p class="card-text">{{user.language.name}}</p>
+
+    </div>
+  </div>
+</div>

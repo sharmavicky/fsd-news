@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand txtcolor" [routerLink]="['/home']">News</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <div *ngIf="!service.loggedIn">
+          <li class="nav-item" >
+              <a class="nav-link " [routerLink]="['/login']" style="color:white">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link txtcolor" [routerLink]="['/signup']" style="color:white">Signup</a>
+              </li>
+          </div>
+          <div *ngIf="service.loggedIn">
+        <li class="nav-item" >
+          <a class="nav-link " [routerLink]="['/login']" style="color:white">Logout</a>
+        </li>
+      <!--   <li class="nav-item" >
+            <a class="nav-link " [routerLink]="['/home']" style="color:white">View  article</a>
+          </li> -->
+        <li class="nav-item" >
+            <a class="nav-link " [routerLink]="['/article']" style="color:white">View favourite article</a>
+          </li>
+      </div>
+      
+        
+      </ul>
+    </div>
+  </nav>
